@@ -17,14 +17,8 @@
     "doctrine/collections": {
         "version": "v1.6.1"
     },
-    "doctrine/common": {
-        "version": "v2.10.0"
-    },
     "doctrine/event-manager": {
         "version": "v1.0.0"
-    },
-    "doctrine/inflector": {
-        "version": "v1.3.0"
     },
     "doctrine/lexer": {
         "version": "v1.0.1"
@@ -139,8 +133,14 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.11.0"
     },
+    "symfony/polyfill-php72": {
+        "version": "v1.11.0"
+    },
     "symfony/process": {
         "version": "v4.2.5"
+    },
+    "symfony/profiler-pack": {
+        "version": "v1.0.4"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -155,6 +155,22 @@
             "config/packages/routing.yaml",
             "config/packages/test/routing.yaml",
             "config/routes.yaml"
+        ]
+    },
+    "symfony/stopwatch": {
+        "version": "v4.2.6"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "1fb02a6e1c8f3d4232cce485c9afa868d63b115a"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
         ]
     },
     "symfony/twig-bridge": {
@@ -174,8 +190,25 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/var-dumper": {
+        "version": "v4.2.6"
+    },
     "symfony/var-exporter": {
         "version": "v4.2.5"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        },
+        "files": [
+            "config/packages/dev/web_profiler.yaml",
+            "config/packages/test/web_profiler.yaml",
+            "config/routes/dev/web_profiler.yaml"
+        ]
     },
     "symfony/web-server-bundle": {
         "version": "3.3",
