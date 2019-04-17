@@ -4,4 +4,5 @@
 {% block body %}
     <h1>{{ title }}:</h1>
     <h3><a href="{{ url }}">{{ article_name }}</a></h3>
+    <h3><a href="{{  path("show-article", {"year": "2019", "article_title": "my-second-article", "_format": "html", "section": "section2"}) }}">My second article</a></h3>
 {% endblock %}
