@@ -7,13 +7,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController {
     
 
-    public function index(TranslatorInterface $translator, Request $request) {
-        
+    public function index(TranslatorInterface $translator) {
+
         return $this->render("home.html.twig", [
             "title" => $translator->trans("Inicio"),
         ]);

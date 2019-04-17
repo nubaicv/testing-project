@@ -1,3 +1,14 @@
 home-page:
     path: /
     controller: App\Controller\HomeController::index
+    
+list-articles:
+    path: /articles
+    controller: App\Controller\ArticleController::lista
+    
+show-article:
+    path: /articles/{year}/{article_title}.{_format}
+    controller: App\Controller\ArticleController::show
+    requirements:
+        _format: html|pdf
+        year: \d+
