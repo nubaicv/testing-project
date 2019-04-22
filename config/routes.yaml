@@ -12,3 +12,7 @@ show-article:
     requirements:
         _format: html|pdf
         year: \d+
+        
+some:
+    path: /some
+    controller: App\Controller\SomeController::index

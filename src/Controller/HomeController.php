@@ -4,17 +4,17 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-//use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
-class HomeController extends AbstractController {
-    
+class HomeController extends BaseController {
 
-    public function index(TranslatorInterface $translator) {
-
+    public function index(Request $request) {
+        
+        $locale = $request->getLocale();
+        
         return $this->render("home.html.twig", [
-            "title" => $translator->trans("Inicio"),
+            "title" => $this->translator->trans("Inicio"),
+            "in_session" => $locale
         ]);
     }
 }

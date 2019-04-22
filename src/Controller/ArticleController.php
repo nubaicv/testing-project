@@ -4,22 +4,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-//use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
-//use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request;
 
-class ArticleController extends AbstractController {
+class ArticleController extends BaseController {
 
-    public function show(TranslatorInterface $translator, $article_title) {
+    public function show($article_title, Request $request) {
         
         return $this->render("show-article.html.twig", [
-            "title" => $translator->trans("Ler artigo"),
+            "title" => $this->translator->trans("Ler artigo"),
             "article_title" => $article_title,
         ]);
     }
     
-    public function lista(TranslatorInterface $translator) {
+    public function lista(Request $request) {
         
         $article_name = "My first article";
         
@@ -29,7 +26,7 @@ class ArticleController extends AbstractController {
         );
         
         return $this->render("list-articles.html.twig", [
-            "title" => $translator->trans("Lista de artigos"),
+            "title" => $this->translator->trans("Lista de artigos"),
             "article_name" => $article_name,
             "url" => $url,
         ]);
