@@ -25,7 +25,15 @@ abstract class BaseController extends AbstractController {
     {
         $this->translator = $translator;
         $this->session = $session;
+        $this->setSomeSessionData(["foo" => "bar"]);
     } // end of __construct
+    
+    protected function setSomeSessionData($data) {
+        
+        foreach ($data as $key => $value) {
+            $this->session->set($key, $value);
+        }
+    }
     
 }
 

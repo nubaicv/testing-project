@@ -14,7 +14,7 @@ class HomeController extends BaseController {
         
         return $this->render("home.html.twig", [
             "title" => $this->translator->trans("Inicio"),
-            "in_session" => $locale
+            "locale" => $locale
         ]);
     }
 }

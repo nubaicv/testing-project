@@ -2,16 +2,34 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" />
+        {% endblock %}
         <style>
-            code {
-                color: green;
+            a#logo {
+                background-image: url({{ asset('assets/img/nubai_new_logo_small.png') }});
             }
         </style>
-        {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <header>
+            <div>
+                <a id="logo" href="{{ url('home-page') }}"></a>
+            </div>
+        {% block menu %}
+            <nav>
+                <ul>
+                    <li><a href="{{ url('home-page') }}">{% trans %}Inicio{% endtrans %}</a></li>
+                    <li><a href="{{ url('list-articles') }}">{% trans %}Lista de artigos{% endtrans %}</a></li>
+                </ul>
+            </nav>
+        {% endblock%}
+        </header>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
+        {% endblock %}
     </body>
 </html>
