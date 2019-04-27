@@ -12,3 +12,11 @@ show-article:
     requirements:
         _format: html|pdf
         year: \d+
+
+new-product:
+    path: /products/new
+    controller: App\Controller\ProductController::new_product
+
+new-product-created:
+    path: /products/created
+    controller: App\Controller\ProductController::created
