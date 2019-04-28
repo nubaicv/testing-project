@@ -13,6 +13,7 @@ class ArticleController extends BaseController {
         return $this->render("show-article.html.twig", [
             "title" => $this->translator->trans("Ler artigo"),
             "article_title" => $article_title,
+            "locales" => $this->locales
         ]);
     }
     
@@ -29,6 +30,7 @@ class ArticleController extends BaseController {
             "title" => $this->translator->trans("Lista de artigos"),
             "article_name" => $article_name,
             "url" => $url,
+            "locales" => $this->locales
         ]);
     }
 }

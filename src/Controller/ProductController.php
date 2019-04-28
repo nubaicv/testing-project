@@ -18,9 +18,9 @@ class ProductController extends BaseController {
         $product = new Product();
 
         $form = $this->createFormBuilder($product)
-                ->add('name', TextType::class)
-                ->add('description', TextareaType::class)
-                ->add('price', IntegerType::class)
+                ->add('name', TextType::class, ['label' => $this->translator->trans('Nome')])
+                ->add('description', TextareaType::class, ['label' => $this->translator->trans('Descrição')])
+                ->add('price', IntegerType::class, ['label' => $this->translator->trans('Preço')])
                 ->add('save', SubmitType::class, ['label' => $this->translator->trans('Salvar produto')])
                 ->getForm();
 
@@ -44,6 +44,7 @@ class ProductController extends BaseController {
         return $this->render("products/new_product.html.twig", [
                     "title" => $this->translator->trans("Novo produto"),
                     "form" => $form->createView(),
+                    "locales" => $this->locales
         ]);
     }
     

@@ -4,17 +4,13 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-
 class HomeController extends BaseController {
 
-    public function index(Request $request) {
-        
-        $locale = $request->getLocale();
+    public function index() {
         
         return $this->render("home.html.twig", [
             "title" => $this->translator->trans("Inicio"),
-            "locale" => $locale
+            "locales" => $this->locales
         ]);
     }
 }
