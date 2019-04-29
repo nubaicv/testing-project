@@ -52,6 +52,7 @@ class ProductController extends BaseController {
         
         return $this->render("products/new_product_created.html.twig", [
                     "title" => $this->translator->trans("Produto criado com sucesso"),
+                    "locales" => $this->locales
         ]);
     }
 

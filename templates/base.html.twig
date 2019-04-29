@@ -16,34 +16,38 @@
     </head>
     <body>
         <div id="page" class="container">
-            <header>
+            <header id="page-header">
                 <div>
                     <a id="logo" href="{{ url('home-page') }}"></a>
                 </div>
-                <nav>
-                    <ul>
-                        {% set req = app.request %}
-                        {% for locale in locales %}
-                            {% if locale != req.getLocale() %}
-                                <li><a href="{{
+                <div id="language-nav-wrapper">
+                    <nav id="language-nav">
+                        <ul>
+                            {% set req = app.request %}
+                            {% for locale in locales %}
+                                {% if locale != req.getLocale() %}
+                                    <li><a href="{{
                                     absolute_url(
                                         path(
                                             req.attributes.get('_route'),
                                             req.attributes.get('_route_params')|merge({'_locale': locale})
                                    )
                                 ) }}" />{{ locale|upper }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </nav>
-                {% block menu %}
-                    <nav>
-                        <ul>
-                            <li><a href="{{ url('home-page') }}">{% trans %}Inicio{% endtrans %}</a></li>
-                            <li><a href="{{ url('list-articles') }}">{% trans %}Lista de artigos{% endtrans %}</a></li>
-                            <li><a href="{{ url('new-product') }}">{% trans %}Criar novo produto{% endtrans %}</a></li>
+                                    {% endif %}
+                                {% endfor %}
                         </ul>
                     </nav>
+                </div>
+                {% block menu %}
+                    <div id="main-nav-wrapper">
+                        <nav id="main-nav">
+                            <ul>
+                                <li><a href="{{ url('home-page') }}">{% trans %}Inicio{% endtrans %}</a></li>
+                                <li><a href="{{ url('list-articles') }}">{% trans %}Lista de artigos{% endtrans %}</a></li>
+                                <li><a href="{{ url('new-product') }}">{% trans %}Criar novo produto{% endtrans %}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 {% endblock%}
             </header>
         {% block body %}{% endblock %}

@@ -8,13 +8,75 @@ and open the template in the editor.
     Author     : ricardo
 */
 
-code {
-    color: green;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+a, a:visited { color: #4c70cb; text-decoration: none; }
+a:hover  { color: #0a0a0a; text-decoration: underline; }
 
 a#logo {
     display: block;
     width: 300px;
     height: 79px;
     background-repeat: no-repeat;
+}
+
+#page-header {
+    position: relative;
+    border-bottom: 1px dotted #000;
+    margin-top: 5px;
+}
+
+#language-nav-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3px;
+}
+
+#main-nav-wrapper {
+    margin: 8px 0px;
+    border: 1px solid #4c70cb;
+    background-color: #eee /*#4c70cb;*/
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav#language-nav ul li {
+    display: inline-block;
+    background-color: #eee;
+}
+
+nav#language-nav ul li a,
+nav#language-nav ul li a:visited {
+    display: block;
+    border: 1px solid #4c70cb;
+    padding: 8px;
+    color: #4c70cb;
+}
+
+nav#language-nav ul li a:hover {
+    text-decoration: none;
+}
+
+nav#main-nav ul li {
+    display: inline-block;
+}
+
+nav#main-nav ul li a,
+nav#main-nav ul li a:visited {
+    display: block;
+    padding: 8px;
+    color: #4c70cb;
+}
+
+nav#main-nav ul li a:hover {
+    border-color: #0a0a0a;
+    text-decoration: none;
 }
