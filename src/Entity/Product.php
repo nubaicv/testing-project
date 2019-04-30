@@ -12,6 +12,7 @@ class Product {
     protected $name;
     protected $description;
     protected $price;
+    protected $expiration_date;
     
     //SETTERS AND GETTERS
     public function getId() {
@@ -48,5 +49,13 @@ class Product {
     
     public function setPrice($price) {
         $this->price = $price;
+    }
+    
+    public function getExpirationDate() {
+        return $this->expiration_date;
+    }
+    
+    public function setExpirationDate($date) {
+        $this->expiration_date = $date;
     }
 }

@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ProductController extends BaseController {
@@ -18,10 +19,14 @@ class ProductController extends BaseController {
         $product = new Product();
 
         $form = $this->createFormBuilder($product)
-                ->add('name', TextType::class, ['label' => $this->translator->trans('Nome')])
-                ->add('description', TextareaType::class, ['label' => $this->translator->trans('Descrição')])
-                ->add('price', IntegerType::class, ['label' => $this->translator->trans('Preço')])
-                ->add('save', SubmitType::class, ['label' => $this->translator->trans('Salvar produto')])
+                ->add('name', TextType::class, ['label' => $this->translator->trans('Nome') . ':'])
+                ->add('description', TextareaType::class, ['label' => $this->translator->trans('Descrição') . ':'])
+                ->add('price', IntegerType::class, ['label' => $this->translator->trans('Preço') . ':'])
+                ->add('expirationDate', DateType::class, [
+                            'label' => $this->translator->trans('Data de validade') . ':',
+                            'widget' => 'single_text',
+                            'required' => false])
+                ->add('save', SubmitType::class, ['label' => $this->translator->trans('Salvar produto') . ':'])
                 ->getForm();
 
         $form->handleRequest($request);
