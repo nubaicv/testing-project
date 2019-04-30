@@ -1,0 +1,13 @@
+# config/validator/validation.yaml
+
+App\Entity\Product:
+    properties:
+        name:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~
+        price:
+            - NotBlank: ~
+        expiration_date:
+            - NotBlank: ~
+            - Type: \DateTime
