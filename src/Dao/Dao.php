@@ -1,12 +1,12 @@
 <?php
 
-// src/Entity/BaseEntity.php
+// src/Dao/Dao.php
 
-namespace App\Entity;
+namespace App\Dao;
 
 use App\Db;
 
-abstract class BaseEntity {
+abstract class Dao {
     
     protected $_db;
     protected $_query;

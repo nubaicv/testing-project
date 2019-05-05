@@ -4,7 +4,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Product;
+use App\Dao\Product_obj;
 use App\Form\NewProductForm;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,7 +12,7 @@ class ProductController extends BaseController {
 
     public function new_product(Request $request) {
 
-        $product = new Product();
+        $product = new Product_obj();
 
         $form = $this->createForm(NewProductForm::class, $product);
 
