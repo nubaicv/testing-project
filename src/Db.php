@@ -4,11 +4,13 @@
 
 namespace App;
 
+use PDO;
+
 abstract class Db {
 
     private static $db;
-    private static $config = array("DB_HOST" => "localhost", "DB_NAME" => "khymnego_kn",
-        "DB_USER" => "khymnego_kn", "DB_PASS" => "?7yN6LU1(SSQ");
+    private static $config = array("DB_HOST" => "localhost", "DB_NAME" => "nubai_sf",
+        "DB_USER" => "root", "DB_PASS" => "admin");
 
     public static function init() {
         if (!self::$db) {
